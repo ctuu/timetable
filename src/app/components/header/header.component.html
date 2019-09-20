@@ -1,0 +1,9 @@
+<div class="left" *ngIf="navService.left">
+    <div class="icon cursor-pointer" (click)="navService.left.icon == 'menu' ?  toggleDrawer() : navService.left.action()"><i
+            class="material-icons icon">{{navService.left.icon}}</i></div>
+    <h3>{{navService.left.content}}</h3>
+</div>
+<div class="right" *ngIf="navService.right" (click)="navService.right.action()">
+    <div class="icon cursor-pointer"><i class="material-icons icon">{{navService.right.icon}}</i></div>
+    <!-- <h3>{{navService.left.content}}</h3> -->
+</div>

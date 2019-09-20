@@ -1,0 +1,21 @@
+<div class="bg" (click)="close()"></div>
+<div #wrapper class="wrapper">
+    <header>
+        <button (click)="close()">取消</button>
+        <button (click)="confirm()">确认</button>
+    </header>
+    <div class="content">
+        <app-picker [items]="days" [(selected)]="daySel"></app-picker>
+        <div class="time">
+            <app-picker [items]="startHours" [(selected)]="startHourSel"></app-picker>
+            <span>:</span>
+            <app-picker [items]="startMinutes" [(selected)]="startMinSel"></app-picker>
+        </div>
+        <span> 至 </span>
+        <div class="time">
+                <app-picker [items]="endHours" [(selected)]="endHourSel"></app-picker>
+                <span>:</span>
+                <app-picker [items]="endMinutes" [(selected)]="endMinSel"></app-picker>
+            </div>
+    </div>
+</div>

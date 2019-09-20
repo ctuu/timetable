@@ -1,0 +1,69 @@
+:host {
+  height: 100%;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba($color: #000000, $alpha: 0.6);
+  opacity: 0;
+  z-index: 8;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  transition: all 0.2s linear;
+}
+.bg {
+  flex: 1;
+}
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  height: 240px;
+  background: #f7f7f7;
+  // position: relative;
+  text-align: center;
+  transform: translateY(100%);
+  // transform: none;
+  transition: all 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+.content {
+  flex: 1;
+  height: 132px;
+  margin: 32px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.time {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+span {
+ padding: 0 4px;
+}
+
+header {
+  display: flex;
+  flex-flow: row;
+  // padding: 16px;
+  // min-height: 44px;
+  margin: 8px;
+  justify-content: space-between;
+  > button {
+    border: none;
+    min-height: 44px;
+    min-width: 88px;
+    background: inherit;
+    // color: #000000;
+  }
+  // border-bottom: 1px solid rgba($color: #000000, $alpha: 0.14)
+}

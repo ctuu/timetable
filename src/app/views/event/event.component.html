@@ -1,0 +1,32 @@
+<div class="com-input summary">
+    <input [(ngModel)]="event.summary" placeholder="填写课程名">
+</div>
+<!-- <h2 class="summary">{{event.summary}}</h2> -->
+<div class="com-input description">
+    <div class="input-icon"><i class="material-icons">notes</i></div>
+    <textarea [(ngModel)]="event.description" type="text" placeholder="填写备注" cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+</div>
+
+<div class="com-fab" (click)="add()">
+    <i class="material-icons">add</i>
+</div>
+
+<ul>
+
+    <li *ngFor="let item of event.section; index as i" class="cursor-pointer">
+        <span class="freq" *ngIf="i == 0 || equalFreq(item.freq, event.section[i-1].freq)">{{item.freq | freq}}</span>
+        <div class="item" [routerLink]="'edit/'+i">
+            <div class="day">{{(i==0 || equalFreq(item.freq, event.section[i-1].freq) || item.time.day != event.section[i-1].time.day ? item.time.day:"")|day}}
+            </div>
+            <div class="content">
+                <time>{{item.time.start+" - "+item.time.end}}
+                    <i *ngIf="item.time.alarm != undefined" class="material-icons">alarm</i>
+                </time>
+                <div class="location">{{item.location}}</div>
+            </div>
+            <div class="icon"><i class="material-icons">arrow_forward_ios</i>
+            </div>
+        </div>
+    </li>
+</ul>

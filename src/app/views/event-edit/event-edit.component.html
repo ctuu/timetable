@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="divider"></div>
+
+    <div class="com-input field">
+        <label>时间</label><span class="cursor-pointer" (click)="timeToggle = true">{{section.time | dayTime}}</span>
+    </div>
+    <div class="com-input field">
+        <label>地点</label><input [(ngModel)]="section.location" placeholder="填写地点">
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="com-input field">
+        <label>提醒</label><input type="checkbox" [(ngModel)]="alarmChecked" (change)="toggleAlarm($event)"
+            class="com-check">
+    </div>
+    <div class="com-input field" *ngIf="alarmChecked">
+        <label>提醒时间</label><span class="cursor-pointer" (click)="alarmToggle = true">{{section.time.alarm | alarm}}</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="com-input field">
+        <label>重复</label><input type="checkbox" [(ngModel)]="freqChecked" (change)="toggleFreq($event)"
+            class="com-check">
+    </div>
+    <div class="com-input field">
+        <label>开始周</label><input type="number" [(ngModel)]="section.freq.start">
+    </div>
+    <div class="com-input field" *ngIf="freqChecked">
+        <label>结束周</label><input type="number" [(ngModel)]="section.freq.end">
+    </div>
+    <div class="com-input field" *ngIf="freqChecked">
+        <label>频率/周</label><input type="number" [(ngModel)]="section.freq.interval">
+    </div>
+</div>
+<app-time-picker *ngIf="timeToggle" (visibleChange)="timeToggle=$event" [(time)]="section.time"></app-time-picker>
+<app-alarm-picker *ngIf="alarmToggle" (visibleChange)="alarmToggle=$event" [(time)]="section.time.alarm"></app-alarm-picker>

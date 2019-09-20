@@ -1,0 +1,3 @@
+<ul #list>
+    <li *ngFor="let e of items; let i = index" [class.selected]="selected == i">{{e.name}}</li>
+</ul>

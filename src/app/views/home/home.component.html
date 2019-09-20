@@ -1,0 +1,19 @@
+<div class="com-input search">
+    <input #search type="text" placeholder="按课程名搜索" (input)="filter(search.value)">
+</div>
+<ul>
+    <li *ngFor="let i of coursesService.events;let v = index" routerLink="event/{{v}}" class="cursor-pointer"
+        [hidden]="visible[v]" >
+        <div class="item">
+            <span class="title">{{i.summary}}</span>
+            <span class="subtitle">{{i.section.length}} 项日程</span>
+        </div>
+        <div class="icon">
+            <i class="material-icons">arrow_forward</i>
+        </div>
+    </li>
+</ul>
+
+<div class="com-fab" (click)="add()">
+    <i class="material-icons">add</i>
+</div>

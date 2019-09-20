@@ -1,0 +1,14 @@
+<div class="bg" (click)="close()"></div>
+<div #wrapper class="wrapper">
+    <header>
+        <button (click)="close()">取消</button>
+        <button (click)="confirm()">确认</button>
+    </header>
+    <div class="content">
+        <span>提前</span>
+        <app-picker [items]="hours" [(selected)]="hourSel"></app-picker>
+        <span>时</span>
+        <app-picker [items]="minutes" [(selected)]="minSel"></app-picker>
+        <span>分</span>
+    </div>
+</div>

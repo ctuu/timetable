@@ -1,0 +1,54 @@
+:host {
+  margin: 0 32px;
+  display: flex;
+  flex-flow: column;
+}
+
+ul {
+  margin: 16px 0 72px 0;
+
+  li {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    margin: 0;
+    outline: none;
+    &:hover {
+      background: rgba($color: #000, $alpha: 0.06);
+    }
+    border-bottom: 1px solid rgba($color: #000, $alpha: 0.14);
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  min-width: 0;
+  padding-left: 8px;
+  .title {
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: rgba($color: #000, $alpha: 0.6);
+  }
+}
+
+.icon {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

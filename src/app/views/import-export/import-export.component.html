@@ -1,0 +1,19 @@
+<h2>导入</h2>
+<span class="message">{{message}}</span>
+<div class="com-input description">
+    <textarea #input type="text" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5"></textarea>
+</div>
+<button (click)="importText(input.value)" [disabled]="!input.value">从文本导入</button>
+<h2>导出</h2>
+<app-event-table #table [events]="coursesService.events"></app-event-table>
+<div class="field">
+    <label>开学日期</label>
+    <input #date type="date" (input)="validate(date.value)" placeholder="2019-09-01">
+</div>
+<button [disabled]="!dateValid" (click)="export(date.value, table.selected())">导出为 .ics </button>
+<button (click)="output.value = exportText(table.selected())">导出为文本</button>
+<div class="com-input description">
+    <textarea #output type="text" disabled cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5"></textarea>
+</div>

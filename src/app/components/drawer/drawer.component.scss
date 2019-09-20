@@ -1,0 +1,64 @@
+:host {
+  height: 100%;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba($color: #000000, $alpha: 0.6);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  display: flex;
+  flex-flow: row;
+  transition: all 0.2s linear;
+}
+
+.bg {
+  flex: 1;
+}
+
+.drawer {
+  display: flex;
+  flex-flow: column;
+  width: 256px;
+  background: #f7f7f7;
+  transform: translateX(-100%);
+  transition: all 0.2s cubic-bezier(.4,0,.2,1);
+  padding: 0 16px;
+}
+
+header {
+  height: 64px;
+}
+
+.content {
+  display: flex;
+  flex-flow: column;
+  nav {
+    margin: 8px 0;
+    display: flex;
+    flex-flow: column;
+    a {
+      display: flex;
+      flex-flow: row;
+      width: 100%;
+      height: 48px;
+      border-radius: 4px;
+      color: rgba($color: #000000, $alpha: 1);
+      &:visited {
+        color: rgba($color: #000000, $alpha: 1);
+      }
+      &:hover {
+        background: rgba($color: #cb1561, $alpha: 0.06);
+        color: #cb1561;
+      }
+      padding: 0 8px;
+      align-items: center;
+      text-decoration: none;
+      span {
+          font-size: 14px;
+        //   font-weight: bold;
+      }
+    }
+  }
+}

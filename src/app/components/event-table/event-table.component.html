@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <th><i class="material-icons"
+                    (click)="toggle()">{{selectAll(ar) ? "check_box" : selectNone(ar) ? "check_box_outline_blank": "indeterminate_check_box"}}</i>
+            </th>
+            <th>课程名</th>
+            <th>项数</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of events; let i = index" (click)="ar[i] = !ar[i]" class="cursor-pointer">
+            <td><i class="material-icons">{{ar[i] ? "check_box" : "check_box_outline_blank"}}</i></td>
+            <td>{{e.summary}}</td>
+            <td>{{e.section.length}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,11 @@
+<aside #drawer class="drawer">
+    <header></header>
+    <div class="content">
+        <nav>
+            <a *ngFor="let e of navList" [routerLink]="e.path" (click)="toggle()">
+                <span>{{e.text}}</span>
+            </a>
+        </nav>
+    </div>
+</aside>
+<div class="bg" (click)="toggle()"></div>

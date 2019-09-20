@@ -1,0 +1,21 @@
+ul {
+  margin: 0;
+  position: relative;
+  //   transform: translateX(2em);
+  // transform: translateY(0px);
+}
+
+li {
+  min-width: 44px;
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+}
+
+.selected {
+  font-weight: bold;
+  color: #4d78cc;
+  // font-size: 18px;
+  border: 1px solid rgba($color: #000000, $alpha: 0.14);
+  border-width: 1px 0;
+}

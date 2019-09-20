@@ -1,0 +1,35 @@
+:host {
+  margin: 16px 0;
+  display: flex;
+  flex-flow: column;
+}
+table {
+  table-layout: fixed;
+}
+
+
+
+th,
+td {
+  padding: 16px;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.125);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align:middle;
+  &:first-child {
+    width: 52px;
+    text-align: center;
+    i {
+      font-size: 20px;
+    }
+  }
+  &:last-child {
+    text-align: right;
+    width: 64px;
+  }
+}
+
+th {
+  height: 56px;
+}

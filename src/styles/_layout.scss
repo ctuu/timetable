@@ -1,0 +1,13 @@
+*,
+.border-box,
+:after,
+:before {
+  box-sizing: border-box; // avoid child elements overflow with padding.
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  padding: 0;
+}

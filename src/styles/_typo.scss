@@ -1,0 +1,101 @@
+@function typo-style($weight: 400, $size: 1rem, $letter-spacing: 0) {
+  @return ("weight": $weight, "size": $size, "letter-spacing": $letter-spacing);
+}
+
+$scale: (
+  h1: typo-style(300, 2.5rem, -1.5px),
+  h2: typo-style(300, 2rem, -0.5px),
+  h3: typo-style(400, 1.75rem, 0px),
+  h4: typo-style(400, 1.5rem, 0.25px),
+  h5: typo-style(400, 1.25rem, 0px),
+  h6: typo-style(500, 1rem, 0.15px)
+);
+
+$scale-class: (
+  subtitle1: typo-style(400, 1rem, 0.15px),
+  subtitle2: typo-style(500, 0.875rem, 0.1px),
+  body1: typo-style(400, 1rem, 0.5px),
+  body2: typo-style(400, 0.875rem, 0.25px),
+  button: typo-style(500, 0.875rem, 1.25px),
+  caption: typo-style(400, 0.75rem, 0.4px),
+  overline: typo-style(400, 0.625rem, 1.5px)
+);
+
+@each $name, $e in $scale {
+  #{$name} {
+    font-weight: map-get($e, "weight");
+    font-size: map-get($e, "size");
+    letter-spacing: map-get($e, "letter-spacing");
+  }
+}
+@each $name, $e in $scale-class {
+  .typo-#{$name} {
+    font-weight: map-get($e, "weight");
+    font-size: map-get($e, "size");
+    letter-spacing: map-get($e, "letter-spacing");
+  }
+}
+
+.typo-a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
+.typo {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2em;
+    // font-weight: bold;
+    // line-height: 2em;
+  }
+}
+
+.typo p {
+  text-align: justify;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  // word-break: break-all;
+  // @include media-query($on-palm) {
+  //   text-align: left;
+  // }
+}
+
+.typo a {
+  text-decoration: underline;
+  // color: $text-color;
+}
+
+.typo table {
+  border-collapse: collapse;
+}
+
+.typo {
+  tr {
+    border-bottom: 1px solid lighten(#777, 40%);
+    font-size: 0.85rem;
+  }
+  th,
+  td {
+    padding: 0.5rem;
+  }
+  tbody > tr:hover {
+    background: #f5f5f5;
+  }
+}
+
+.typo .contains-task-list {
+  list-style: none;
+}
+
+
+.text-hint {
+  color: rgba($color: #000000, $alpha: .6)
+}
+
+.text-disabled {
+  color: rgba($color: #000000, $alpha: .38)
+}
