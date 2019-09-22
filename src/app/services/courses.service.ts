@@ -58,7 +58,7 @@ export class CoursesService {
 
   addSection(id: number, e: Section): number {
     this.events[id].section.push(e)
-    this.changeSection(id)
+    // this.changeSection(id)
 
     return this.events[id].section.length - 1
   }

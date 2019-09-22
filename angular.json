@@ -99,8 +99,13 @@
           "options": {
             "browserTarget": "timetable-calendar:build"
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "timetable-calendar"
 }

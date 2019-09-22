@@ -12,7 +12,7 @@ function timeAdapter(oriDate: Date, time: string, day: number, week: number): Da
 }
 
 function freqAdapter(day: number, freq: Freq): Calendar.freq {
-    return new Calendar.freq(freq.interval, freq.end - freq.start + 1, dayEN[day])
+    return new Calendar.freq(freq.interval, (freq.end - freq.start + 1)/freq.interval, dayEN[day])
 }
 
 function eventAdapter(oriDate: Date, event: Event): Calendar.vevent[] {
