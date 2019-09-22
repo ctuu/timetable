@@ -1,7 +1,8 @@
 :host {
   position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   background: #fff;
+  width: 100%;
   z-index: 4;
   top: 0px;
   height: 64px;

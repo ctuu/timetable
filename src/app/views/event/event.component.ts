@@ -3,12 +3,17 @@ import { Freq, Event } from 'src/app/models/event';
 import { CoursesService } from 'src/app/services/courses.service';
 import { ActivatedRoute } from '@angular/router';
 import { NavService } from 'src/app/services/nav.service';
+import { fabAnimation } from 'src/app/animations';
 
 
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
-  styleUrls: ['./event.component.scss']
+  styleUrls: ['./event.component.scss'],
+  animations: [
+    fabAnimation
+    // animation triggers go here
+  ]
 })
 export class EventComponent implements OnInit {
   id: number

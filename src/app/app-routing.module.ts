@@ -8,11 +8,11 @@ import { AboutComponent } from './views/about/about.component';
 
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
-  { path: "import-export", component: ImportExportComponent },
-  { path: "about", component: AboutComponent },
-  { path: "event/:id", component: EventComponent },
-  { path: "event/:id/edit/:sid", component: EventEditComponent }
+  { path: "", component: HomeComponent, data: { animation: 'view' } },
+  { path: "import-export", component: ImportExportComponent, data: { animation: 'view' } },
+  { path: "about", component: AboutComponent, data: { animation: 'view' } },
+  { path: "event/:id", component: EventComponent, data: { animation: 'com' } },
+  { path: "event/:id/edit/:sid", component: EventEditComponent, data: { animation: 'edit' } }
 ];
 
 @NgModule({

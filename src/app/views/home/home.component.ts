@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from 'src/app/services/courses.service';
 import { NavService } from 'src/app/services/nav.service';
+import { fabAnimation } from 'src/app/animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [
+    fabAnimation
+    // animation triggers go here
+  ]
 })
 export class HomeComponent implements OnInit {
   visible;
